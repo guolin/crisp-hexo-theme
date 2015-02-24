@@ -1,2 +1,4 @@
 # config
 logo: /asset/guolin.png
+feed: /atom.xml
+google_analytics: UA-59837832-1
