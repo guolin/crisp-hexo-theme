@@ -1,14 +1,70 @@
-<!DOCTYPE html>
-<html>
-<%- partial('casper/head') %>
-<% if (typeof page.title == 'undefined') { %>
-<body class="home-template">
-<% } else { %>
-<body class="post-template">
-<% } %>
-  <%- partial('casper/header') %>
-  <%- body %>
-  <%- partial('casper/footer') %>
-  <%- partial('casper/after_all') %>
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+		<%
+		  var title = page.title;
+
+		  if (is_archive()){
+		    title = 'Archives';
+
+		    if (is_month()){
+		      title += ': ' + page.year + '/' + page.month;
+		    } else if (is_year()){
+		      title += ': ' + page.year;
+		    }
+		  } else if (is_category()){
+		    title = 'Category: ' + page.category;
+		  } else if (is_tag()){
+		    title = 'Tag: ' + page.tag;
+		  }
+		%>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+        <meta name="description" content="{{meta_description}}">
+
+        <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="<%- config.root %>styles/crisp.css">
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <% if (typeof page.title == 'undefined') { %>
+		<body class="home-template">
+	<% } else { %>
+		<body class="post-template">
+	<% } %>
+
+        <header id="header">
+            <% if (theme.logo) { %><a id="logo" href="<%- config.root %>"><img src="<%- theme.logo %>" alt="<%- config.title%>" /></a><% } %>
+            <h1><a href="<%- config.root %>"><%- config.author %></a></h1>
+            <p><%- config.subtitle %></p>
+            <%- partial('_partial/follow') %>
+        </header>
+
+        <main id="content">
+        <%- body %>
+        </main>
+        <footer id="footer">
+            <section id="footer-message">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All rights reserved. Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></section>
+        </footer>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','<%- config.root %>js/ga.js','ga');
+            ga('create', 'UA-59837832-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
 </html>
+
+

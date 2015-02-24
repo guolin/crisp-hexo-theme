@@ -1,0 +1,58 @@
+<% permalink = config.url + config.root + post.path %>
+
+<article class="post">
+  
+  <%= date(post.date, 'MMMM D, YYYY') %>
+  <% if (post.tags && post.tags.length){ %>
+    <span class="taglist">  &middot; 
+    <% count = post.tags.length %>
+    <% post.tags.forEach(function(tag, index) { %>
+      <a href='<%= config.root + tag.path %>'><%= tag.name %></a> 
+    <% }); %>
+    </span>
+  <% } %>
+
+  <h1 class="post-title"><%- post.title %></h1>
+  <section class="post-content article-entry">
+    <%- post.content %>
+  </section>
+  <footer class="post-footer">
+    <!--
+    <section class="author">
+      <h4><%- config.author %></h4>
+      <p><%- theme.bio %></p>
+    </section>
+    -->
+  </footer>
+</article>
+
+<nav class="pagination" role="pagination">
+    <% if (page.prev) { %>
+    <a class="newer-posts" href="<%- url_for(page.prev.path) %>">
+        ← prev <!--<%- page.prev.title %>-->
+    </a>
+    <% } %>
+    <span class="page-number">•</span>
+    <% if (page.next) { %>
+    <a class="older-posts" href="<%- url_for(page.next.path) %>">
+        <!--<%- page.next.title %>--> next →
+    </a>
+    <% } %>
+</nav>
+
+<!-- Begin Comments Code -->
+<div id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'guolinn'; // required: replace example with your shortname
+      var disqus_identifier = '{{id}}';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+<!-- End Comments Code -->

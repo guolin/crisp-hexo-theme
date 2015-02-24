@@ -1,0 +1,25 @@
+<% page.posts.each(function(post) { %>
+<section id="{{id}}" class="{{post_class}}">
+  <h3 class="post-title">
+  <a href="<%- config.root %><%- post.path %>"><%- post.title %></a>
+  
+  <span class="separator"> &middot; </span>
+  
+  <%= date(post.date, 'MMMM D, YYYY') %>
+  
+  <% if (post.tags && post.tags.length){ %>
+    <span class="taglist">  &middot; 
+    <% count = post.tags.length %>
+    <% post.tags.forEach(function(tag, index) { %>
+      <a href='<%= config.root + tag.path %>'><%= tag.name %></a> 
+    <% }); %>
+    </saan>
+  <% } %>
+  </h3>
+</section>
+<% }); %>
+<nav class="pagination" role="pagination">
+  <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a><% } %>
+  <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
+  <% if (page.next) { %><a class="older-posts" href="<%- url_for(page.next_link) %>">Older Posts →</a><% } %>
+</nav>
