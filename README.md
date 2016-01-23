@@ -1,15 +1,17 @@
 # crisp
 
-a really minimalist theme. inspired by [a ghost theme crisp](https://github.com/kathyqian/crisp-ghost-theme)
-
 Preview: [Live Demo](//guolin.github.io)
+
+![hexo-theme-crisp](//screenshot.png)
+
+a really minimalist theme. inspired by [a ghost theme crisp](https://github.com/kathyqian/crisp-ghost-theme)
 
 ## Installation
 
 ### Install
 
 ``` bash
-$ git clone https://github.com/guolin/crisp-ghost-theme.git themes/crisp
+$ git clone git@github.com:guolin/crisp-hexo-theme.git themes/crisp
 ```
 
 ### Enable
