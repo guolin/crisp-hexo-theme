@@ -2,7 +2,7 @@
 
 Preview: [Live Demo](//guolin.github.io)
 
-![hexo-theme-crisp](//screenshot.png)
+![hexo-theme-crisp](https://raw.githubusercontent.com/guolin/crisp-hexo-theme/master/screenshot.png)
 
 a really minimalist theme. inspired by [a ghost theme crisp](https://github.com/kathyqian/crisp-ghost-theme)
 
