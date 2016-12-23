@@ -4,7 +4,7 @@ Preview: [Live Demo](//guolin.github.io)
 
 ![hexo-theme-crisp](https://raw.githubusercontent.com/guolin/crisp-hexo-theme/master/screenshot.png)
 
-a really minimalist theme. inspired by [a ghost theme crisp](https://github.com/kathyqian/crisp-ghost-theme)
+A minimalist theme inspired by a [Ghost theme](https://github.com/kathyqian/crisp-ghost-theme) of the same name by Kathy Qian.
 
 ## Installation
 
@@ -21,13 +21,22 @@ Modify `theme` setting in `_config.yml` to `crisp`.
 ### Update
 
 ``` bash
-cd themes/casper
+cd themes/crisp
 git pull
 ```
 
 ## Configuration
 
-- **logo** - Your website logo.
+- **logo** - Your website logo
 - **rss** - RSS subscription link (change if using Feedburner)
-- **google_analytics** - Google Analytics id.
+- **google_analytics** - [Google Analytics](https://support.google.com/analytics/answer/1008015) tracking ID
+- **disqus** - [Disqus](https://disqus.com/admin/create/) shortname
 
+Social media accounts:
+
+- **instagram**
+- **pinterest**
+- **github**
+- **facebook**
+- **twitter**
+- **linkedin**
