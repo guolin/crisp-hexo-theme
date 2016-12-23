@@ -1,4 +1,11 @@
-# config
 logo: /asset/guolin.png
-feed: /atom.xml
+rss: /atom.xml
 google_analytics:
+
+# Social accounts
+instagram:
+pinterest:
+github:
+facebook:
+twitter:
+linkedin:
