@@ -22,9 +22,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="<%- config.description %>">
         <link rel="shortcut icon" href="<%- theme.logo %>"/>
-        <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.feed %>">
         <link rel="canonical" href="http://guolinn.com/">
-
+        <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
         <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
         <meta name="description" content="{{meta_description}}">
 
@@ -58,7 +57,7 @@
         </main>
         <footer id="footer">
             <section id="footer-message">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All rights reserved. Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. <a href="https://github.com/guolin/crisp-hexo-theme" target="_blank">crisp</a> theme by <a href="guolin.github.io" target="_blank">Guo Lin</a>.</section>
-        </footer>
+        </footer><% if (theme.google_analytics) { %>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -66,7 +65,7 @@
             })(window,document,'script','<%- config.root %>js/ga.js','ga');
             ga('create', '<%- theme.google_analytics %>', 'auto');
             ga('send', 'pageview');
-        </script>
+        </script><% } %>
     </body>
 </html>
 

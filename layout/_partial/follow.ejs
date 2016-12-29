@@ -1,10 +1,24 @@
 <div id="follow-icons">
-	<a href="http://instagram.com/guolin"><i class="fa fa-instagram fa-2x"></i></a>
-	<a href="http://pinterest.com/guolin"><i class="fa fa-pinterest-square fa-2x"></i></a>
-	<a href="http://github.com/guolin"><i class="fa fa-github-square fa-2x"></i></a>
-	<a href="http://facebook.com/guolinnn"><i class="fa fa-facebook-square fa-2x"></i></a>
-	<a href="http://twitter.com/MrGuo"><i class="fa fa-twitter-square fa-2x"></i></a>
-	<a href="http://linkedin.com/in/mrguolin"><i class="fa fa-linkedin-square fa-2x"></i></a>
-	<a href="<%- theme.feed %>"><i class="fa fa-rss-square fa-2x"></i></a>
+  <% if (theme.instagram) { -%>
+    <a href="http://instagram.com/<%- theme.instagram %>"><i class="fa fa-instagram fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.pinterest) { -%>
+    <a href="http://pinterest.com/<%- theme.pinterest %>"><i class="fa fa-pinterest-square fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.github) { -%>
+    <a href="http://github.com/<%- theme.github %>"><i class="fa fa-github-square fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.facebook) { -%>
+    <a href="http://facebook.com/<%- theme.facebook %>"><i class="fa fa-facebook-square fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.twitter) { -%>
+    <a href="http://twitter.com/<%- theme.twitter %>"><i class="fa fa-twitter-square fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.linkedin) { -%>
+    <a href="http://linkedin.com/in/<%- theme.linkedin %>"><i class="fa fa-linkedin-square fa-2x"></i></a>
+  <% } -%>
+  <% if (theme.rss) { -%>
+    <a href="<%- theme.rss%>"><i class="fa fa-rss-square fa-2x"></i></a>
+  <% } -%>
 </div>
 <h6><a href="<%- config.root %>about">About</a></h6>
