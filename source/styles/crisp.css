@@ -247,6 +247,12 @@ footer a:hover {
 	color:#444;
 	text-decoration: none;
 }
+footer .cnzz_stat {
+	margin-left: 10px;
+}
+footer .cnzz_stat img {
+	height: 14px;
+}
 /* Large Screens */
 @media only screen and (min-width: 1281px) {
 	html, body {
